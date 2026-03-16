@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of [Your Name] — Developer & AI Builder" />
+    <meta property="og:title" content="[Your Name] — Portfolio" />
+    <meta property="og:description" content="Developer, builder, and AI enthusiast." />
+    <meta property="og:image" content="./assets/images/og-image.jpg" />
+    <title>[Your Name] — Portfolio</title>
+
+    <link rel="icon" href="./assets/icons/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="topbar-line"></div>
+<div class="page-loader" id="pageLoader">
+  <div class="loader-ring"></div>
+</div>
+
+
+    <!-- ======= NAVBAR ======= -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">YourName.dev</a>
+        <ul class="nav-links">
+          <li><a href="#github-projects">GitHub</a></li>
+          <li><a href="#ai-websites">AI Websites</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ======= HERO ======= -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <span class="hero-tag">Open to opportunities</span>
+        <h1 class="hero-title">Hi, I'm <span class="accent">[Your Name]</span></h1>
+        <p class="hero-subtitle">Developer · Builder · AI Enthusiast</p>
+        <p class="hero-desc">
+          I build web experiences and ship AI-powered products.
+          Here's everything I've made.
+        </p>
+        <div class="hero-btns">
+          <a href="#github-projects" class="btn btn-primary">View My Work</a>
+          <a href="./assets/cv.pdf" class="btn btn-outline" target="_blank">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <!-- ======= ABOUT ======= -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section-label">Who I am</p>
+        <h2 class="section-title">About me</h2>
+        <p class="section-sub">A little bit about my background</p>
+        <div class="about-grid">
+          <div class="avatar-wrap">
+            <img src="./assets/images/avatar.jpg" alt="[Your Name]" class="avatar-img" />
+          </div>
+          <div class="about-content">
+            <p>
+              I'm a developer who loves building things on the web.
+              I work with HTML, CSS, JavaScript and use AI tools to
+              ship projects faster than ever.
+            </p>
+            <p>
+              I enjoy turning ideas into real, working products —
+              from GitHub side projects to fully live AI-powered websites.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag pink">Cursor AI</span>
+              <span class="tag yellow">Vercel</span>
+              <span class="tag pink">Sanity CMS</span>
+              <span class="tag">GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= GITHUB PROJECTS ======= -->
+    <section class="section" id="github-projects">
+      <div class="container">
+        <p class="section-label">GitHub</p>
+        <h2 class="section-title">GitHub projects</h2>
+        <p class="section-sub">Open source work and personal experiments</p>
+        <div class="cards-grid" id="githubCardsContainer">
+          <!-- Cards injected by sanity.js -->
+          <div class="loading-placeholder">Loading projects...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= AI WEBSITES ======= -->
+    <section class="section" id="ai-websites">
+      <div class="container">
+        <p class="section-label">Built with AI</p>
+        <h2 class="section-title">AI-powered websites</h2>
+        <p class="section-sub">Live sites I built using AI tools</p>
+        <div class="cards-grid" id="aiCardsContainer">
+          <!-- Cards injected by sanity.js -->
+          <div class="loading-placeholder">Loading projects...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CONTACT ======= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="section-label">Get in touch</p>
+        <h2 class="section-title">Contact me</h2>
+        <p class="section-sub">I'll reply within 24 hours</p>
+        <form
+          class="contact-form"
+          id="contactForm"
+          action="https://formspree.io/f/xgonnnqj"
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's it about?" required />
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="footer-copy">© 2026 [Your Name] — Built with HTML, CSS & JS</p>
+        <div class="social-links">
+          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+          <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ======= SCRIPTS ======= -->
+    <script src="./js/sanity.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/main.js"></script>
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+
+  </body>
+</html>

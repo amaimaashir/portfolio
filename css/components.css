@@ -1,0 +1,291 @@
+/* ================================
+   PROJECT CARD
+================================ */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-6px);
+}
+
+.card-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: #1e1e38;
+}
+
+.card-thumb-placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(
+    135deg,
+    rgba(179, 191, 255, 0.08),
+    rgba(221, 123, 223, 0.06)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: rgba(179, 191, 255, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.card-tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(179, 191, 255, 0.07);
+  color: var(--color-primary);
+  border: 1px solid rgba(179, 191, 255, 0.15);
+}
+
+.card-links {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.card-btn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  background: transparent;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-btn:hover {
+  background: rgba(179, 191, 255, 0.1);
+  border-color: var(--color-primary);
+}
+
+.card-btn.live {
+  background: rgba(255, 245, 138, 0.08);
+  color: var(--color-yellow);
+  border-color: rgba(255, 245, 138, 0.2);
+}
+
+.card-btn.live:hover {
+  background: rgba(255, 245, 138, 0.15);
+  border-color: var(--color-yellow);
+}
+
+.card-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+
+/* ================================
+   BADGE — LIVE DOT
+================================ */
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-yellow);
+  background: rgba(255, 245, 138, 0.08);
+  border: 1px solid rgba(255, 245, 138, 0.2);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-yellow);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+
+/* ================================
+   SECTION DIVIDER
+================================ */
+.divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-purple)
+  );
+  border-radius: var(--radius-full);
+  margin: 12px 0 32px;
+}
+
+
+/* ================================
+   TOPBAR GRADIENT LINE
+================================ */
+.topbar-line {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-purple),
+    var(--color-pink),
+    var(--color-yellow)
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+
+/* ================================
+   EMPTY STATE
+================================ */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 0;
+  color: var(--color-text-dim);
+  font-size: 14px;
+}
+
+.empty-state span {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 12px;
+  opacity: 0.3;
+}
+
+
+/* ================================
+   TOOLTIP
+================================ */
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-wrap .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.tooltip-wrap:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* ================================
+   BACK TO TOP BUTTON
+================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 42px;
+  height: 42px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: var(--transition);
+  z-index: 999;
+  text-decoration: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: rgba(179, 191, 255, 0.1);
+  border-color: var(--color-primary);
+}
+
+
+/* ================================
+   MOBILE CARD ADJUSTMENTS
+================================ */
+@media (max-width: 480px) {
+  .card-thumb,
+  .card-thumb-placeholder {
+    height: 140px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-links {
+    flex-wrap: wrap;
+  }
+}
